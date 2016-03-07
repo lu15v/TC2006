@@ -1,0 +1,16 @@
+Ejercicios elaborados en Clojure para la materia, Lenguajes de
+Programación.
+
+Para ejecutar los archivos, es necesario tener instalado
+Leinigen, para más información consulta el sitio:
+http://leiningen.org/ Una vez configurado el exec
+descarga los archivos y ejecutalos con:
+
+lein exec archivo.clj
+
+o
+
+Desde el repl con
+
+lein repl
+(load-file "file.clj")
