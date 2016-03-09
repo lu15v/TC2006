@@ -23,6 +23,6 @@ or from the repl
 
 And then you can access to the functions.
 
-Author
+## Author
 
 Luis Eduardo Ballinas Aguilar
