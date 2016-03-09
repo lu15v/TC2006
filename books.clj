@@ -8,7 +8,6 @@
      (map #(vector (:title %) (:author %)))
      (sort)))
 
-
 (def book-seq
   [(->Book "Antoine de Saint-Exupéry" "Le Petit Prince" 1943 "Gallimard")
    (->Book "C.S. Lewis" "The Magician's Nephew" 1955 "The Bodley Head")
