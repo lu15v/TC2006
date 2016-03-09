@@ -272,11 +272,12 @@
 (defn range
   [a b]
   (loop [result ()
-         x 1]
+         x a]
     (if(> x b)
-      (reverse result)
+      (reverse (rest result))
       (if(<= a x b)
         (recur (cons x result) (inc x))))))
+
 
 
 
