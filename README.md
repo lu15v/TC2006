@@ -1,17 +1,17 @@
-Programming with Clojure
+# Programming with Clojure
 
 The following exersises are developed in Clojure for the
 Programming Languages class.
 
 
-# Setup the project
+## Setup the project
 
 
 Clone the repository with the following command:
 
 git clone https://github.com/lu15v/TC2006.git
 
-# Run application
+## Run application
 
 	lein exec filename.clj
 
