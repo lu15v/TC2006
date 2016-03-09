@@ -38,7 +38,6 @@
        (map-indexed
                 (fn [i l1] (repeat (inc i) l1)) lst)))
 
-
 (defn largest
     [lst]
     "Returns the largest element of the input list"
