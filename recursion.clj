@@ -13,7 +13,6 @@
         0
         (+ 1 (my-count(rest x)))))
 
-
 (defn add-list
     [x]
     (if (empty? x)
