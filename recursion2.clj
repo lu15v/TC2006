@@ -17,7 +17,6 @@
     result
     (recur(cons x result) (dec number)))))
 
-
 (defn invert-pairs
   [vect]
   "Inverts every vector"
@@ -55,11 +54,11 @@
     (empty? lst) lst
     (list? (first lst)) (concat (my-flatten (first lst)) (my-flatten (rest lst)))
     :else (cons (first lst) (my-flatten (rest lst)))))
-      
-      
+
+
 (defn exchange
   [x1 x2 lst]
-  "Returns a list with the same elements as lst, except that 
+  "Returns a list with the same elements as lst, except that
   all occurrences of x1 are replaced by x2 and vice versa"
   (cond
     (empty? lst) lst
@@ -89,7 +88,7 @@
    (if (empty? l1)
        result
        (recur (rest l1) (insert (first l1) result)))))
-         
+
 
 (defn binary
   [n]
@@ -101,7 +100,7 @@
         (if(= n 1)
               (recur (dec no) (cons 1 result))
               (recur (quot no 2) (cons (rem no 2) result))))))
-            
+
 
 
 (defn prime-factors
@@ -115,9 +114,9 @@
            (if(=(rem no x) 0)
             (recur x (cons x result) (quot no x))
             (recur (inc x) result no)))))
-            
 
-      
+
+
 (defn compress
   [lst]
   "removes the repeated elements in a list"
@@ -127,7 +126,7 @@
     :else (cons (first lst) (compress (rest lst)))))
 
 
-    
+
 (defn pack
   [lst]
   "Returns a list with the same items into a nested list"
@@ -139,7 +138,7 @@
         (if(= (first l1) (first (rest l1)))
               (recur result (rest l1)  (cons (first l1) equals))
               (recur (cons (cons (first l1) equals)result) (rest l1) (empty equals))))))
-              
+
 
  (defn encode
    [lst]
@@ -152,7 +151,7 @@
         (if(= (first l1) (first (rest l1)))
               (recur result (rest l1) (inc size))
               (recur (cons [(inc size) (first l1)] result) (rest l1) 0)))))
-            
+
 
 (defn encode-modified
    [lst]
@@ -167,8 +166,8 @@
               (if (not= (first l1) (first (rest l1)))
                   (if(= size 1)
                     (recur (cons (first l1) result) (rest l1) 1)
-                    (recur (cons [size (first l1)] result) (rest l1) 1)))))))             
-                   
+                    (recur (cons [size (first l1)] result) (rest l1) 1)))))))
+
 
 (defn decode
   [lst]
@@ -180,8 +179,8 @@
       (if (coll? (first l1))
           (recur (rest l1) (cons (my-repeat (first(first l1)) (second(first l1))) result))
           (recur (rest l1) (cons (first l1) result))))))
-        
-        
+
+
 
 
 (deftest test-my-repeat
@@ -216,9 +215,9 @@
 (deftest test-my-flatten
   (is (= () (my-flatten ())))
   (is (= '(a b c d e) (my-flatten '((a b) ((c) d (e))))))
-  (is (= '(one two three four) 
+  (is (= '(one two three four)
          (my-flatten '(((one) ((two))) () (three (())) four)))))
-       
+
 (deftest test-exchange
   (is (= () (exchange 'x 'y ())))
   (is (= '(d b c a) (exchange 'a 'd '(a b c d))))
