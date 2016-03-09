@@ -38,7 +38,6 @@
 
 ;------------------------------------------------------
 
-
 (defn palindrome?
   [n]
   (let [reversed (apply str (reverse (str n)))
