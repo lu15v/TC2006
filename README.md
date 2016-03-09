@@ -1,6 +1,6 @@
 # Programming with Clojure
 
-The following exersises are developed in Clojure for the
+The following exercises are developed in Clojure for the
 Programming Languages class.
 
 
