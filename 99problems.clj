@@ -67,8 +67,13 @@
 (my-reverse '(1 2 4 5 6))
 
 ;-------------------------(6)--------------------------------
+(defn palindrome?
+  [lst]
+  (if(= lst (reverse lst))
+    true
+    false))
 
-
+(palindrome? '(X A A X))
 ;-------------------------(7)--------------------------------
 (defn my-flatten
   [lst]
