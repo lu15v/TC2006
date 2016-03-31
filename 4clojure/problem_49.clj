@@ -14,7 +14,7 @@
       (conj  fst (vec (drop n vectr)))))
 
 
-(deftest test-problem60
+(deftest test-problem49
   (is(= (problem49 3 [1 2 3 4 5 6]) [[1 2 3] [4 5 6]]))
   (is(= (problem49 1 [:a :b :c :d]) [[:a] [:b :c :d]]))
   (is(= (problem49 2 [[1 2] [3 4] [5 6]]) [[[1 2] [3 4]] [[5 6]]])))
