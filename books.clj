@@ -6,7 +6,7 @@
   (->>
     (filter #(<= start  (.year %) end)s)
      (map #(vector (:title %) (:author %)))
-     (sort)))
+     (sort-by #(first %))))
 
 (def book-seq
   [(->Book "Antoine de Saint-Exupéry" "Le Petit Prince" 1943 "Gallimard")
@@ -21,6 +21,7 @@
    (->Book "Pierre Boulle" "La Planète des Singes" 1963 "Le cercle du nouveau livre")
    (->Book "Suzanne Collins" "The Hunger Games" 2008 "Scholastic Press")
    (->Book "Vladimir Nabokov" "Lolita" 1955 "Olympia Press")])
+
 
 (deftest test-books-in-range
   (is (= ()
@@ -47,5 +48,4 @@
            ["The Hunger Games" "Suzanne Collins"]
            ["The Magician's Nephew" "C.S. Lewis"])
          (books-in-range book-seq 1800 2015))))
-
 (run-tests)
