@@ -26,18 +26,22 @@
     nil"
   [& body]
   `(let [condition# ~(first (last body))]
-    (do-while condition  ~@body)))
+    (if (= :while condition#)
+        (do-while ~@body)
+        (if (= :until condition#)
+          (not-do-while ~@body)
+          nil))))
 
 
-(defmacro do-while [condition & body]
+(defmacro do-while [& body]
   `(loop []
-      ~@(butlast body)
-        (if (= condition :while)
-            (when ~(last (last body)) (recur))
-            (if (= condition :until)
-              (when-not ~(last (last body)) (recur))
-              nil))))
+     ~@(butlast body)
+     (when ~(last (last body)) (recur))))
 
+(defmacro not-do-while [& body]
+    `(loop []
+      ~@(butlast body)
+      (when-not ~(last (last body)) (recur))))
 
 
 (defmacro def-pred
@@ -55,6 +59,8 @@
     `(fn [~x] (do ~@lst)))
   ([lst x & args]
     `(fn [~x] (create-function ~lst ~@args))))
+
+
 
 (defmacro defn-curry
   "Perfomrs a currying transformation to a function definition. It Takes
